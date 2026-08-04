@@ -1,0 +1,20 @@
+package numbersystem;
+
+public class N002_DeciTooctal {
+
+	public static void main(String[] args) {
+
+		int num=556;
+		int sum=0;
+		int m=1;
+		
+		while(num!=0) {
+			int rem =num %8;
+			sum = sum+(rem*m);
+			num/=8;
+			m=m*10;	
+		}
+		System.out.println(sum);
+	}
+
+}

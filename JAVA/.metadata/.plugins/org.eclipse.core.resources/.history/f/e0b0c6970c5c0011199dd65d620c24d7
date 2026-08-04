@@ -1,0 +1,8 @@
+package com;
+
+import jakarta.servlet.annotation.WebFilter;
+
+@WebFilter("/ser1")
+public class Filter1 {
+
+}

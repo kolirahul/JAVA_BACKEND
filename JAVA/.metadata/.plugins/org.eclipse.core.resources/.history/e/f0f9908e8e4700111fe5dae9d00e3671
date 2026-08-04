@@ -1,0 +1,19 @@
+package coom;
+
+public class Jdbc_demo {
+
+	public static void main(String[] args) {
+
+		// STEP 1: load the driver.
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

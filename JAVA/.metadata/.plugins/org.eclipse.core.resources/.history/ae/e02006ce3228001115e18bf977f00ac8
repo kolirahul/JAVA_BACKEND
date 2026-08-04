@@ -1,0 +1,23 @@
+package numbersystem;
+
+public class N001_DecimalToBinary {
+
+	public static void main(String[] args) {
+
+		int num=155;
+		int sum=0;
+		int m=1;
+		
+		while(num!=0) {
+			int rem = num % 2;
+			sum =sum +(rem*m);
+			num/=2;
+//			m=m*10;
+//	
+			
+		}
+		System.out.println(sum);
+		
+	}
+
+}

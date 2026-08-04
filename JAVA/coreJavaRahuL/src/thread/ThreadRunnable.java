@@ -1,0 +1,45 @@
+package thread;
+
+class demo
+{
+	
+}
+class th1 extends demo implements Runnable
+{
+
+	@Override
+	public void run() {
+
+		for(int i=1;i<10;i++) {
+		System.out.println(" th1 :"+i);
+		}
+	}
+	
+	}
+
+class th2 implements Runnable
+{
+	public void run() {
+
+		for(int i=1;i<10;i++) {
+		System.out.println(" th2 :"+i);
+		}
+	}
+	}
+
+public class ThreadRunnable {
+
+	public static void main(String[] args) {
+
+		th1 t=new th1();
+		th2 t2=new th2();
+		
+	  Thread th1=new Thread(t);
+	  Thread th2=new Thread(t2);
+	  
+	  th1.start();
+	  th2.start();
+	  
+	}
+
+}

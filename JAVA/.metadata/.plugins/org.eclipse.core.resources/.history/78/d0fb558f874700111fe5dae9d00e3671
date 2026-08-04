@@ -1,0 +1,20 @@
+package com;
+
+public class JDBC_demo {
+
+	public static void main(String[] args) {
+
+		// step 1 : load the driver
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("drive loaded");
+		} 
+		catch (ClassNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

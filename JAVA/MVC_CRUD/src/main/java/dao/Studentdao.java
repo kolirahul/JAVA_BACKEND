@@ -1,0 +1,128 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import model.Student;
+
+public class Studentdao {
+	
+	Connection cn= null;
+	  public Studentdao()
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/tops","root","9875009197");
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		}
+	}
+	
+	public int addStudent(Student st)
+	{
+		int i=0;
+		try {
+			PreparedStatement ps=
+			 cn.prepareStatement("insert into student values(?,?,?,?)");
+			ps.setInt(1, 0);
+			ps.setString(2,st.getName());
+			ps.setString(3,st.getEmail());
+			ps.setInt(4,st.getAge());
+			
+			i=ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+		
+	}
+  
+	     public  ArrayList<Student> allstudent()
+	     {
+	    	 ArrayList<Student> al=new ArrayList<Student>();
+	    	 try {
+				PreparedStatement ps=
+						 cn.prepareStatement("select * from student");
+				ResultSet rs=ps.executeQuery();
+				while(rs.next())
+				{
+					Student st =new Student();
+					st.setId(rs.getInt(1));
+					st.setName(rs.getString(2));
+					st.setEmail(rs.getString(3));
+					st.setAge(rs.getInt(4));
+					al.add(st);
+					
+				}
+			 } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			 }
+	    	 return al;
+	     }
+	     
+	     public int deletestudent(int id)
+	     
+	     { int i=0;
+	    	 
+	    	 try {
+				PreparedStatement ps=cn.prepareStatement("delete from student where id=?");
+				ps.setInt(1, id);
+				 i=ps.executeUpdate();
+			 } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			 }
+	    	 return i;
+	     }
+	     
+	     public Student StudentbyId(int id)
+	     {
+	    	 Student st=new Student();
+	    	 try {
+				PreparedStatement ps=cn.prepareStatement("select * from student where id=?");
+				ps.setInt(1, id);
+				ResultSet rs=ps.executeQuery();
+				if(rs.next())
+				{
+					st.setId(rs.getInt(1));
+					st.setName(rs.getString(2));
+					st.setEmail(rs.getString(3));
+					st.setAge(rs.getInt(4));
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	 
+	    	 return st;
+	     }
+	     
+	     public int updateStudent(Student st)
+	     {
+	    	 int i=0;
+	    	 try {
+				PreparedStatement ps=cn.prepareStatement("update student set name=?,email=?,age=? where id=?");
+				ps.setString(1, st.getName());
+				ps.setString(2,st.getEmail());
+				ps.setInt(3, st.getAge());
+				ps.setInt(4, st.getId());
+				
+				i=ps.executeUpdate();
+				
+				
+			 } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			 }
+	    	 return i;
+	     }
+}

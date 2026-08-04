@@ -1,0 +1,25 @@
+package logicalpratice;
+
+public class Armstrong_number {
+
+	public static void main(String[] args) {
+
+		int num=1000;
+		int temp=num;
+		int sum=0;
+		
+		for(int i=100;i<num;i++) {
+			
+			int rem = num % 10;
+			sum= sum+(rem*rem*rem);
+			num/=10;
+			
+			System.out.println(num);
+			
+		}
+		
+		
+		
+	}
+
+}

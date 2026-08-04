@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\Users\Rahul koli\OneDrive\Desktop\javaPratice_rahul\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3818499120.index
+3703816535.index
+1873549769.index
+4241633318.index
+2780838722.index
+2239849630.index
+4275341011.index
+3620384436.index
+1251024231.index
+3719531047.index
+2326832416.index

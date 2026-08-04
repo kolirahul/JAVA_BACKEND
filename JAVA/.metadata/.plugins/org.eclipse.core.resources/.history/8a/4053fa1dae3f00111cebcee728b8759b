@@ -1,0 +1,21 @@
+package oOOps;
+
+class demoparent {
+    public void name() {
+        System.out.println("I'm a parent class");
+    }
+}
+
+class Demo123 extends demoparent {
+    @Override
+    public void name() {
+        System.out.println("I'm a child class");
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        Demo obj = new Demo(); // parent reference, child object
+        obj.name(); // calls child method
+    }
+}

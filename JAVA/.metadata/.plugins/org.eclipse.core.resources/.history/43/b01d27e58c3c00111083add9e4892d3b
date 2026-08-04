@@ -1,0 +1,53 @@
+package oOOps;
+
+//parent - super - base
+class A
+{
+	int a = 10;
+	public void display()
+	{
+		System.out.println("Class A display calling");
+	}
+}
+
+//child - sub -derived
+class B extends A
+{
+	int a = 100;
+	public void test()
+	{
+		int a = 500;
+		System.out.println(a);
+		System.out.println(this.a);
+		System.out.println(super.a);
+		System.out.println("class B test calling");
+	}
+}
+class C extends B
+{
+	int a = 1000;
+	public void test1()
+	{
+		int a = 800;
+		System.out.println(a);
+		System.out.println(this.a);
+		System.out.println(super.a);
+		System.out.println("class C test calling");
+	}
+}
+
+public class Inheritance {
+
+	public static void main(String[] args) { 
+
+		B b = new B();
+		b.test();
+		A a =new A();
+		a.display();
+		C c= new C();
+		c.test1();
+		
+		
+		
+	}
+}

@@ -1,0 +1,35 @@
+package logicalpratice;
+
+public class Armstrong_number {
+
+	public static void main(String[] args) {
+
+		int total=0;
+		for(int i=100;i<=999;i++) {
+		
+		
+		int num=i;
+		int temp=num;
+		int sum=0;
+		
+		
+		while(num!=0) {
+			
+			int rem = num % 10;
+			sum+=(rem*rem*rem);
+			num/=10;
+			
+		}
+		if(temp==sum) {
+			total+=temp;
+			System.out.println( temp + " armstrong");
+		}
+		
+		
+		}
+		
+		System.out.println(total);
+		
+	}
+
+}

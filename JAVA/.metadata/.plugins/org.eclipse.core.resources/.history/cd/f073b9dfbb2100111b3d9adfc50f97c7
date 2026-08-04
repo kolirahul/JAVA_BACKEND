@@ -1,0 +1,25 @@
+package logicalpratice;
+
+public class palindrome_number {
+
+	public static void main(String[] args) {
+
+		int num=54545;
+		int rev=0;
+		
+		if(num>0) {
+			
+			int ans=num%10;
+			    num=rev+ans;
+			    rev=num/10;
+			    
+			    System.out.println(rev +"reverse number :");
+			
+		}
+		
+		
+		
+
+	}
+
+}
